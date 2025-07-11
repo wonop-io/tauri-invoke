@@ -24,7 +24,7 @@ pub use wasm_bindgen_futures;
 #[wasm_bindgen]
 extern "C" {
     #[doc(hidden)]
-    #[wasm_bindgen(js_namespace = window)]
+    #[wasm_bindgen(js_namespace = ["window", "__TAURI__", "core"], js_name = invoke)]
     pub fn __TAURI_INVOKE__(name: &str, arguments: JsValue) -> JsValue;
 }
 
